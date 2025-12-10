@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\EducationController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\LanguageController;
+use App\Http\Controllers\Admin\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,4 +48,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     // Language Routes
     Route::resource('languages', LanguageController::class);
+
+    // Project Routes
+    Route::resource('projects', ProjectController::class);
 });

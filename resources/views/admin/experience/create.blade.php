@@ -1,11 +1,8 @@
 <x-admin-layout :title="LabelConstants::ADD_NEW . ' ' . LabelConstants::EXPERIENCE">
     <h3 class="text-gray-700 text-3xl font-medium">{{ LabelConstants::ADD_NEW }} {{ LabelConstants::EXPERIENCE }}</h3>
 
-    <div class="mt-8">
-        <form action="{{ route('admin.experiences.store') }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            @csrf
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <x-admin.form-card action="{{ route('admin.experiences.store') }}">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Company -->
                 <div class="mb-4">
                     <x-input-label for="company" :value="LabelConstants::COMPANY">
@@ -104,8 +101,7 @@
                     {{ LabelConstants::CANCEL }}
                 </x-secondary-text-link>
             </div>
-        </form>
-    </div>
+    </x-admin.form-card>
     <script src="{{ asset('js/admin/date-validation.js') }}"></script>
     <x-summernote-scripts />
 </x-admin-layout>

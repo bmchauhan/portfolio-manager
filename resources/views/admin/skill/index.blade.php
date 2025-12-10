@@ -6,8 +6,8 @@
         </x-primary-link>
     </div>
 
-    <div class="mt-8">
-        <x-table>
+    <x-admin.table-card>
+        <x-table :hasShadow="false">
             <x-table.thead>
                 <x-table.th>{{ LabelConstants::NAME }}</x-table.th>
                 <x-table.th>{{ LabelConstants::CATEGORY }}</x-table.th>
@@ -37,8 +37,6 @@
                 @endforeach
             </x-table.tbody>
         </x-table>
-        <div class="mt-4">
-            {{ $skills->links() }}
-        </div>
-    </div>
+        <x-admin.pagination :model="$skills" />
+    </x-admin.table-card>
 </x-admin-layout>

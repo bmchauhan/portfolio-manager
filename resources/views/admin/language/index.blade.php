@@ -27,8 +27,8 @@
             </x-primary-button>
         </div>
 
-        <div class="mt-8">
-            <x-table>
+        <x-admin.table-card>
+            <x-table :hasShadow="false">
                 <x-table.thead>
                     <x-table.th>{{ LabelConstants::NAME }}</x-table.th>
                     <x-table.th>{{ LabelConstants::PROFICIENCY }}</x-table.th>
@@ -54,10 +54,8 @@
                     @endforeach
                 </x-table.tbody>
             </x-table>
-            <div class="mt-4">
-                {{ $languages->links() }}
-            </div>
-        </div>
+            <x-admin.pagination :model="$languages" />
+        </x-admin.table-card>
 
         <!-- Create Modal -->
         <x-modal name="create-language" :title="LabelConstants::ADD_NEW . ' ' . LabelConstants::LANGUAGE">

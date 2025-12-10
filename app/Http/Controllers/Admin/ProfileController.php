@@ -35,7 +35,9 @@ class ProfileController extends Controller
             $user->id, 
             $data, 
             $request->file('resume'), 
-            $request->file('avatar')
+            $request->file('avatar'),
+            $request->boolean('remove_avatar'),
+            $request->boolean('remove_resume')
         );
 
         return redirect()->route('admin.profile.edit')->with(MessageConstants::SUCCESS, MessageConstants::UPDATED_SUCCESSFULLY);

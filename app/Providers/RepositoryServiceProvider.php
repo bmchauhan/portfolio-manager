@@ -13,6 +13,8 @@ use App\Interfaces\SkillRepositoryInterface;
 use App\Repositories\SkillRepository;
 use App\Interfaces\LanguageRepositoryInterface;
 use App\Repositories\LanguageRepository;
+use App\Interfaces\ProjectRepositoryInterface;
+use App\Repositories\ProjectRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -28,6 +30,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(EducationRepositoryInterface::class, EducationRepository::class);
         $this->app->bind(SkillRepositoryInterface::class, SkillRepository::class);
         $this->app->bind(LanguageRepositoryInterface::class, LanguageRepository::class);
+        $this->app->bind(ProjectRepositoryInterface::class, ProjectRepository::class);
     }
 
     /**

@@ -1,12 +1,8 @@
 <x-admin-layout :title="LabelConstants::EDIT . ' ' . LabelConstants::PROFILE">
     <h3 class="text-gray-700 text-3xl font-medium">{{ LabelConstants::EDIT }} {{ LabelConstants::PROFILE }}</h3>
 
-    <div class="mt-8">
-        <form action="{{ route('admin.profile.update') }}" method="POST" enctype="multipart/form-data" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            @csrf
-            @method('PUT')
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <x-admin.form-card action="{{ route('admin.profile.update') }}" method="PUT" :hasFiles="true">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Full Name -->
                 <div class="mb-4">
                     <x-input-label for="full_name" :value="LabelConstants::FULL_NAME">
@@ -68,24 +64,27 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Resume Upload -->
-                <x-admin.file-upload 
+                <x-file-upload 
                     :label="LabelConstants::RESUME . ' (PDF)'" 
                     name="resume" 
                     accept=".pdf" 
-                    :error="$errors->get('resume')" 
-                    :file="$personalDetail->resume ?? null" 
-                    :deleteRoute="route('admin.profile.resume.delete')"
+                    :previewUrl="$personalDetail->resume ? $personalDetail->resume->url : null" 
+                    :fileName="$personalDetail->resume ? $personalDetail->resume->original_name : null"
+                    :useCard="true"
+                    :labelInside="true"
+                    removeName="remove_resume"
+                    helpText="Upload a new file to replace the current one."
                 />
 
                 <!-- Avatar Upload -->
-                <x-admin.file-upload 
-                    :label="LabelConstants::AVATAR" 
+                <x-image-upload 
                     name="avatar" 
-                    accept="image/*" 
-                    :error="$errors->get('avatar')" 
-                    :file="$personalDetail->avatar ?? null" 
-                    :deleteRoute="route('admin.profile.avatar.delete')"
-                    :isImage="true"
+                    :label="LabelConstants::AVATAR"
+                    :previewUrl="$personalDetail->avatar ? $personalDetail->avatar->url : null"
+                    :fileName="$personalDetail->avatar ? $personalDetail->avatar->original_name : null"
+                    removeName="remove_avatar"
+                    :useCard="true"
+                    :labelInside="true"
                 />
             </div>
 
@@ -94,6 +93,5 @@
                     {{ LabelConstants::SAVE }} {{ LabelConstants::PROFILE }}
                 </x-primary-button>
             </div>
-        </form>
-    </div>
+    </x-admin.form-card>
 </x-admin-layout>

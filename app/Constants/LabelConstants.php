@@ -66,4 +66,18 @@ class LabelConstants
     const LANGUAGES = 'Languages';
     const LANGUAGE = 'Language';
     const PORTFOLIO_DETAILS = 'Portfolio Details';
+    const SELECT_PDF = 'Select PDF File';
+
+    // Projects
+    const PROJECTS = 'Projects';
+    const PROJECT = 'Project';
+    const SKILLS_TOOLS = 'Skills & Tools';
+    const IMAGE = 'Image';
+    const CLIENT = 'Client';
+    const PERSONAL = 'Personal';
+    const TITLE = 'Title';
+    const DEMO_LINK = 'Demo Link';
+    const GITHUB_LINK = 'GitHub Link';
+    const LINKS = 'Links';
+    const REMOVE_IMAGE = 'Remove Image';
 }

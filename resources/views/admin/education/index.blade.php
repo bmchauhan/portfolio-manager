@@ -6,8 +6,8 @@
         </x-primary-link>
     </div>
 
-    <div class="mt-8">
-        <x-table>
+    <x-admin.table-card>
+        <x-table :hasShadow="false">
             <x-table.thead>
                 <x-table.th>{{ LabelConstants::INSTITUTION }}</x-table.th>
                 <x-table.th>{{ LabelConstants::DEGREE }}</x-table.th>
@@ -41,8 +41,6 @@
                 @endforeach
             </x-table.tbody>
         </x-table>
-        <div class="mt-4">
-            {{ $educations->links() }}
-        </div>
-    </div>
+        <x-admin.pagination :model="$educations" />
+    </x-admin.table-card>
 </x-admin-layout>

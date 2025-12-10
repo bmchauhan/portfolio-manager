@@ -34,6 +34,8 @@ class UpdateProfileRequest extends FormRequest
             'github_url' => 'nullable|url',
             'resume' => 'nullable|file|mimes:pdf|max:2048',
             'avatar' => 'nullable|image|max:2048',
+            'remove_avatar' => 'nullable|boolean',
+            'remove_resume' => 'nullable|boolean',
         ];
     }
 }

@@ -22,14 +22,20 @@ class ProfileService
         return $this->profileRepository->findByUserId($userId);
     }
 
-    public function updateProfile(int $userId, array $data, ?UploadedFile $resume = null, ?UploadedFile $avatar = null): PersonalDetail
+    public function updateProfile(int $userId, array $data, ?UploadedFile $resume = null, ?UploadedFile $avatar = null, bool $removeAvatar = false, bool $removeResume = false): PersonalDetail
     {
         $profile = $this->getProfile($userId);
 
+        // Handle Resume Removal
+        if ($removeResume && $profile && $profile->resume_id) {
+            $this->deleteAttachment($profile->resume_id);
+            $data['resume_id'] = null;
+        }
+
         // Handle Resume Upload
         if ($resume) {
-            // Delete old resume if exists
-            if ($profile && $profile->resume_id) {
+            // Delete old resume if exists (or if it wasn't removed yet but we are replacing it)
+            if ($profile && $profile->resume_id && !$removeResume) {
                 $this->deleteAttachment($profile->resume_id);
             }
             
@@ -43,10 +49,16 @@ class ProfileService
             $data['resume_id'] = $attachment->id;
         }
 
+        // Handle Avatar Removal
+        if ($removeAvatar && $profile && $profile->avatar_id) {
+            $this->deleteAttachment($profile->avatar_id);
+            $data['avatar_id'] = null;
+        }
+
         // Handle Avatar Upload
         if ($avatar) {
-             // Delete old avatar if exists
-            if ($profile && $profile->avatar_id) {
+             // Delete old avatar if exists (or if it wasn't removed yet but we are replacing it)
+            if ($profile && $profile->avatar_id && !$removeAvatar) {
                 $this->deleteAttachment($profile->avatar_id);
             }
 

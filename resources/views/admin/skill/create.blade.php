@@ -1,11 +1,8 @@
 <x-admin-layout :title="LabelConstants::ADD_NEW . ' ' . LabelConstants::SKILL">
     <h3 class="text-gray-700 text-3xl font-medium">{{ LabelConstants::ADD_NEW }} {{ LabelConstants::SKILL }}</h3>
 
-    <div class="mt-8">
-        <form action="{{ route('admin.skills.store') }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            @csrf
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <x-admin.form-card action="{{ route('admin.skills.store') }}">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Name -->
                 <div class="mb-4">
                     <x-input-label for="name" :value="LabelConstants::NAME">
@@ -69,7 +66,5 @@
                     {{ LabelConstants::SAVE }}
                 </x-primary-button>
             </div>
-        </form>
-    </div>
-</div>
+    </x-admin.form-card>
 </x-admin-layout>

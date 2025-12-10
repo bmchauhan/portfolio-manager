@@ -9,11 +9,7 @@
 
     <h3 class="text-gray-700 text-3xl font-medium">{{ LabelConstants::EDIT }} {{ LabelConstants::EDUCATION }}</h3>
 
-    <div class="mt-8">
-        <form action="{{ route('admin.educations.update', $education->id) }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            @csrf
-            @method('PUT')
-
+    <x-admin.form-card action="{{ route('admin.educations.update', $education->id) }}" method="PUT">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Institution -->
                 <div class="mb-4">
@@ -83,8 +79,7 @@
                     {{ LabelConstants::CANCEL }}
                 </x-secondary-text-link>
             </div>
-        </form>
-    </div>
+    </x-admin.form-card>
     <script src="{{ asset('js/admin/date-validation.js') }}"></script>
     <x-summernote-scripts />
 </x-admin-layout>

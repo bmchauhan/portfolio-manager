@@ -17,6 +17,8 @@ class Attachment extends Model
         'file_size',
     ];
 
+    protected $appends = ['url'];
+
     public function getUrlAttribute()
     {
         return Storage::url($this->file_path);
