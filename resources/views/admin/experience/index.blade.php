@@ -37,13 +37,7 @@
                         </span>
                     </x-table.td>
                     <x-table.td>
-                        <div class="flex flex-wrap gap-1">
-                            @foreach($experience->skills as $skill)
-                                <span class="px-2 py-1 text-xs font-semibold rounded-full bg-indigo-100 text-indigo-800">
-                                    {{ $skill->name }}
-                                </span>
-                            @endforeach
-                        </div>
+                        <x-tooltip-list :items="$experience->skills" keyName="name" :limit="5" />
                     </x-table.td>
                     <x-table.td class="text-sm leading-5 text-gray-500">
                         {{ $experience->start_date->format('M Y') }} - 

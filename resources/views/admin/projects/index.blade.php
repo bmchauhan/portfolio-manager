@@ -40,11 +40,7 @@
                     </x-table.td>
                     <x-table.td>
                         @if($project->skills_tools)
-                            <div class="flex flex-wrap gap-1">
-                                @foreach($project->skills_tools as $skill)
-                                    <span class="px-2 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-800">{{ $skill }}</span>
-                                @endforeach
-                            </div>
+                            <x-tooltip-list :items="$project->skills_tools" :limit="5" />
                         @endif
                     </x-table.td>
                     <x-table.td>

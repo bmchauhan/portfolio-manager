@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\AdminUserSeeder;
 use Database\Seeders\SkillSeeder;
 use Database\Seeders\LanguageSeeder;
+use Database\Seeders\DataImportSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,9 +19,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            AdminUserSeeder::class,
-            SkillSeeder::class,
-            LanguageSeeder::class,
+            // AdminUserSeeder::class,
+            // SkillSeeder::class, // Commented out to use DataImportSeeder instead
+            // LanguageSeeder::class, // Commented out to use DataImportSeeder instead
+            DataImportSeeder::class,
         ]);
     }
 }
