@@ -22,9 +22,9 @@
     ">
         <div class="flex justify-between items-center">
             <h3 class="text-gray-700 text-3xl font-medium">{{ LabelConstants::LANGUAGES }}</h3>
-            <button @click="$dispatch('open-modal', 'create-language')" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded">
+            <x-primary-button @click="$dispatch('open-modal', 'create-language')" type="button">
                 {{ LabelConstants::ADD_NEW }}
-            </button>
+            </x-primary-button>
         </div>
 
         <div class="mt-8">
@@ -44,7 +44,7 @@
                             <div class="text-sm leading-5 text-gray-900">{{ OptionConstants::PROFICIENCY_LEVELS[$language->proficiency] ?? $language->proficiency }}</div>
                         </x-table.td>
                         <x-table.td class="text-right text-sm leading-5 font-medium">
-                            <button @click="openEditModal({{ $language }})" class="text-indigo-600 hover:text-indigo-900 mr-4">
+                            <button @click="openEditModal({{ $language }})" class="btn-link-secondary mr-4">
                                 {{ LabelConstants::EDIT }}
                             </button>
                             

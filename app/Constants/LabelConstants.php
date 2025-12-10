@@ -65,4 +65,5 @@ class LabelConstants
     // Language
     const LANGUAGES = 'Languages';
     const LANGUAGE = 'Language';
+    const PORTFOLIO_DETAILS = 'Portfolio Details';
 }
