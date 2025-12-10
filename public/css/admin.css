@@ -1,0 +1,101 @@
+/* Common Form Components */
+.form-label {
+    display: block;
+    color: #374151; /* text-gray-700 */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.form-control {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow */
+    appearance: none;
+    border-width: 1px;
+    border-radius: 0.25rem; /* rounded */
+    width: 100%; /* w-full */
+    padding-top: 0.5rem; /* py-2 */
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem; /* px-3 */
+    padding-right: 0.75rem;
+    color: #374151; /* text-gray-700 */
+    line-height: 1.25; /* leading-tight */
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* focus:shadow-outline */
+}
+
+.form-error {
+    color: #ef4444; /* text-red-500 */
+    font-size: 0.75rem; /* text-xs */
+    font-style: italic;
+    margin-top: 0.5rem; /* mt-2 */
+}
+
+/* Buttons */
+.btn {
+    font-weight: 700; /* font-bold */
+    padding-top: 0.5rem; /* py-2 */
+    padding-bottom: 0.5rem;
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem;
+    border-radius: 0.25rem; /* rounded */
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* focus:shadow-outline */
+}
+
+.btn-primary {
+    background-color: #4f46e5; /* bg-indigo-600 */
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #4338ca; /* hover:bg-indigo-700 */
+}
+
+.btn-secondary {
+    background-color: #6b7280; /* bg-gray-500 */
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #374151; /* hover:bg-gray-700 */
+}
+
+.btn-link-secondary {
+    display: inline-block;
+    vertical-align: baseline;
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: #4f46e5;
+}
+
+.btn-link-secondary:hover {
+    color: #3730a3; /* hover:text-indigo-800 */
+}
+
+.btn-link-danger {
+    background: none;
+    border: none;
+    padding: 0;
+    font-weight: 500;
+    color: #dc2626; /* text-red-600 */
+    cursor: pointer;
+}
+
+.btn-link-danger:hover {
+    color: #7f1d1d; /* text-red-900 */
+}
+
+.btn-danger {
+    background-color: #ef4444; /* bg-red-500 */
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #dc2626; /* hover:bg-red-600 */
+}
