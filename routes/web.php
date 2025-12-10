@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\EducationController;
 use App\Http\Controllers\Admin\SkillController;
+use App\Http\Controllers\Admin\LanguageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,4 +44,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     // Skill Routes
     Route::resource('skills', SkillController::class);
+
+    // Language Routes
+    Route::resource('languages', LanguageController::class);
 });

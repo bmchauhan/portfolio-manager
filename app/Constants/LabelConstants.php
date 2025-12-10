@@ -61,4 +61,8 @@ class LabelConstants
     const CATEGORY = 'Category';
     const PROFICIENCY = 'Proficiency';
     const TOOL = 'Tool';
+
+    // Language
+    const LANGUAGES = 'Languages';
+    const LANGUAGE = 'Language';
 }
